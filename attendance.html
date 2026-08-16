@@ -236,12 +236,12 @@
         </div>
 
         <div class="result-row">
-          <span class="result-label">Impact (Current Slot)</span>
+          <span class="result-label">Impact (Current session)</span>
           <span class="result-value" id="currentWeight">0.00%</span>
         </div>
 
         <div class="result-row">
-          <span class="result-label">Impact (Next Slot)</span>
+          <span class="result-label">Impact (Next session)</span>
           <span class="result-value" id="nextWeight">0.00%</span>
         </div>
       </div>
@@ -275,12 +275,12 @@
         const maxTotalSessions = Math.floor(attended / 0.75);
         const allowedLeaves = maxTotalSessions - total;
         leaveLabel.innerText = "Bunk Capacity (≥75%)";
-        leavesVal.innerText = `${allowedLeaves} slot(s)`;
+        leavesVal.innerText = `${allowedLeaves} session(s)`;
         leavesVal.className = "result-value badge-safe";
       } else {
         const needed = (3 * total) - (4 * attended);
         leaveLabel.innerText = "Recovery Needed";
-        leavesVal.innerText = `${needed} slot(s)`;
+        leavesVal.innerText = `${needed} session(s)`;
         leavesVal.className = "result-value badge-warn";
       }
 
