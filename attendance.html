@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATTENDANCE — Devagiri</title>
+  <!-- Google Font: Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700;1,900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --border-focus: #58a6ff;
+      --text: #c9d1d9;
+      --text-dim: #8b949e;
+      --accent: #58a6ff;
+      --safe-bg: rgba(46, 160, 67, 0.15);
+      --safe-text: #3fb950;
+      --safe-border: rgba(46, 160, 67, 0.4);
+      --warn-bg: rgba(248, 81, 73, 0.15);
+      --warn-text: #f85149;
+      --warn-border: rgba(248, 81, 73, 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 520px;
+    }
+
+    .nav-back {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover {
+      color: var(--accent);
+    }
+
+    .brand-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .college-name {
+      font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      font-style: italic;
+      font-weight: 900;
+      font-size: 1.9rem;
+      line-height: 1.15;
+      color: #f0f6fc;
+    }
+
+    .sub-location {
+      font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      font-style: italic;
+      font-weight: 900;
+      font-size: 1.9rem;
+      line-height: 1.15;
+      color: var(--accent);
+      letter-spacing: 2px;
+      margin-top: 0.2rem;
+    }
+
+    .page-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: #f0f6fc;
+      text-align: center;
+      margin-top: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .sub {
+      color: var(--text-dim);
+      font-size: 0.8rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.5rem;
+    }
+
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .input-group:last-of-type {
+      margin-bottom: 0;
+    }
+
+    label {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      margin-bottom: 0.4rem;
+    }
+
+    input {
+      width: 100%;
+      background: #0d1117;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.75rem;
+      color: #f0f6fc;
+      font-family: inherit;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    input:focus {
+      border-color: var(--border-focus);
+    }
+
+    .results {
+      margin-top: 1.5rem;
+      border-top: 1px dashed var(--border);
+      padding-top: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.65rem 0.85rem;
+      background: #0d1117;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 0.85rem;
+    }
+
+    .result-row.highlight {
+      border-color: var(--border-focus);
+    }
+
+    .result-label {
+      color: var(--text-dim);
+    }
+
+    .result-value {
+      font-weight: bold;
+      color: #f0f6fc;
+    }
+
+    .badge-safe {
+      color: var(--safe-text);
+      background: var(--safe-bg);
+      border: 1px solid var(--safe-border);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    .badge-warn {
+      color: var(--warn-text);
+      background: var(--warn-bg);
+      border: 1px solid var(--warn-border);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    footer {
+      margin-top: 2.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <a href="/" class="nav-back">&larr; back to portal</a>
+    
+    <div class="brand-header">
+      <div class="college-name">St. Joseph's College</div>
+      <div class="sub-location">DEVAGIRI</div>
+    </div>
+
+    <div class="page-title">&gt; ATTENDANCE</div>
+    <div class="sub">threshold: 75.00% target</div>
+
+    <div class="card">
+      <div class="input-group">
+        <label for="total">// Total Conducted Sessions</label>
+        <input type="number" id="total" min="1" placeholder="e.g. 40" oninput="calculate()">
+      </div>
+
+      <div class="input-group">
+        <label for="attended">// Sessions Attended</label>
+        <input type="number" id="attended" min="0" placeholder="e.g. 32" oninput="calculate()">
+      </div>
+
+      <div class="results" id="output" style="display: none;">
+        <div class="result-row highlight">
+          <span class="result-label">Current Attendance</span>
+          <span class="result-value" id="percentage">0.00%</span>
+        </div>
+
+        <div class="result-row">
+          <span class="result-label" id="leaveLabel">Status</span>
+          <span id="leaves">0</span>
+        </div>
+
+        <div class="result-row">
+          <span class="result-label">Impact (Current Slot)</span>
+          <span class="result-value" id="currentWeight">0.00%</span>
+        </div>
+
+        <div class="result-row">
+          <span class="result-label">Impact (Next Slot)</span>
+          <span class="result-value" id="nextWeight">0.00%</span>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <span><i>What a wonderfull name...</i></span>
+    </footer>
+  </div>
+
+  <script>
+    function calculate() {
+      const total = parseInt(document.getElementById('total').value, 10);
+      const attended = parseInt(document.getElementById('attended').value, 10);
+      const outputDiv = document.getElementById('output');
+
+      if (isNaN(total) || isNaN(attended) || total <= 0 || attended < 0 || attended > total) {
+        outputDiv.style.display = 'none';
+        return;
+      }
+
+      outputDiv.style.display = 'flex';
+
+      const percentage = ((attended / total) * 100).toFixed(2);
+      document.getElementById('percentage').innerText = `${percentage}%`;
+
+      const leaveLabel = document.getElementById('leaveLabel');
+      const leavesVal = document.getElementById('leaves');
+
+      if (attended / total >= 0.75) {
+        const maxTotalSessions = Math.floor(attended / 0.75);
+        const allowedLeaves = maxTotalSessions - total;
+        leaveLabel.innerText = "Bunk Capacity (≥75%)";
+        leavesVal.innerText = `${allowedLeaves} slot(s)`;
+        leavesVal.className = "result-value badge-safe";
+      } else {
+        const needed = (3 * total) - (4 * attended);
+        leaveLabel.innerText = "Recovery Needed";
+        leavesVal.innerText = `${needed} slot(s)`;
+        leavesVal.className = "result-value badge-warn";
+      }
+
+      const currentInfluence = ((1 / total) * 100).toFixed(2);
+      document.getElementById('currentWeight').innerText = `±${currentInfluence}%`;
+
+      const nextInfluence = ((1 / (total + 1)) * 100).toFixed(2);
+      document.getElementById('nextWeight').innerText = `±${nextInfluence}%`;
+    }
+  </script>
+
+</body>
+</html>

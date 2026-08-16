@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>St. Joseph's College, Devagiri</title>
+  <!-- Google Font: Playfair Display for the editorial, luxury serif feel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700;1,900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --border-hover: #58a6ff;
+      --text: #c9d1d9;
+      --text-dim: #8b949e;
+      --accent: #58a6ff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 520px;
+      text-align: center;
+    }
+
+    .prompt {
+      color: var(--accent);
+      font-size: 0.85rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .brand-header {
+      margin-bottom: 2.75rem;
+    }
+
+    .college-name {
+      font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      font-style: italic;
+      font-weight: 900;
+      font-size: 2.1rem;
+      line-height: 1.15;
+      color: #f0f6fc;
+      letter-spacing: -0.5px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .sub-location {
+      font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      font-style: italic;
+      font-weight: 900;
+      font-size: 2.1rem;
+      line-height: 1.15;
+      color: var(--accent);
+      letter-spacing: 2px;
+      margin-top: 0.2rem;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .redirect-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 1.25rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.2s ease, transform 0.15s ease;
+    }
+
+    .redirect-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+    }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: bold;
+      color: #f0f6fc;
+    }
+
+    .card-desc {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      margin-top: 0.2rem;
+    }
+
+    .arrow {
+      color: var(--accent);
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 3.5rem;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="prompt">guest@sjcd:~$ ./portal</div>
+    
+    <div class="brand-header">
+      <div class="college-name">St. Joseph's College</div>
+      <div class="sub-location">DEVAGIRI</div>
+    </div>
+
+    <div class="links">
+      <a href="/attendance.html" class="redirect-card">
+        <div style="text-align: left;">
+          <div class="card-title">&gt; ATTENDANCE</div>
+          <div class="card-desc">Attendance & leave calculator</div>
+        </div>
+        <span class="arrow">&rarr;</span>
+      </a>
+    </div>
+
+    <footer>
+      <span id="quote"><i>Hakuna Matata...</i></span>
+    </footer>
+  </div>
+</body>
+</html>
